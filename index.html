@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💕 ดูดวงสมพงศ์ 12 ราศี - Zodiac Love Match</title>
+    <meta name="description" content="เช็คดวงความรัก 12 นักษัตร ราศีไหนสมพงศ์กัน? ชาย-หญิง, ชาย-ชาย, หญิง-หญิง">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- 파비콘 -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💕</text></svg>">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3198582468837090"
+         crossorigin="anonymous"></script>
+
+    <style>
+        /* ===================================
+           CSS 변수 - Romantic Twilight 테마
+        =================================== */
+        :root {
+            --gradient-bg: linear-gradient(180deg, #0f0f23 0%, #1a1a3e 40%, #2d1b4e 100%);
+            --gradient-header: linear-gradient(135deg, #ff6b9d 0%, #c44ced 50%, #6366f1 100%);
+            --gradient-pink: linear-gradient(135deg, #ff6b9d 0%, #ff8fab 100%);
+            --gradient-gold: linear-gradient(135deg, #ffd700 0%, #ffab00 100%);
+            
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            
+            --pink-primary: #ff6b9d;
+            --glow-pink: 0 0 20px rgba(255, 107, 157, 0.5);
+            
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.8);
+            --text-muted: rgba(255, 255, 255, 0.5);
+        }
+
+        /* PC 사이드 레일 표시 설정 */
+        @media (min-width: 1024px) {
+            .side-rail { display: block !important; }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background: var(--gradient-bg);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding-bottom: 100px; 
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* 배경 효과 */
+        .stars, .floating-hearts { position: fixed; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; }
+        .stars { z-index: 0; }
+        .floating-hearts { z-index: 1; overflow: hidden; }
+
+        .star { position: absolute; width: 3px; height: 3px; background: white; border-radius: 50%; animation: twinkle 2s infinite; }
+        .heart { position: absolute; top: -5%; animation: floatDown 12s linear infinite; opacity: 0.4; font-size: 1rem; }
+
+        @keyframes twinkle { 0%, 100% { opacity: 0.3; transform: scale(1); } 50% { opacity: 1; transform: scale(1.2); } }
+        @keyframes floatDown { 0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; } 10% { opacity: 0.4; } 100% { transform: translateY(110vh) rotate(360deg); opacity: 0; } }
+
+        /* 헤더 */
+        header {
+            background: var(--gradient-header);
+            padding: 50px 20px 40px;
+            text-align: center;
+            border-radius: 0 0 40px 40px;
+            box-shadow: 0 10px 40px rgba(255, 107, 157, 0.3);
+            position: relative;
+            z-index: 10;
+        }
+        h1 { font-size: 2rem; font-weight: 800; margin-bottom: 8px; text-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        .subtitle { font-size: 1.1rem; opacity: 0.95; font-weight: 400; }
+
+        /* 로또 배너 */
+        .lotto-banner {
+            display: block;
+            background: var(--gradient-gold);
+            color: #1a1a2e;
+            text-decoration: none;
+            padding: 14px 20px;
+            margin: -25px 20px 25px;
+            border-radius: 20px;
+            text-align: center;
+            font-weight: 700;
+            box-shadow: 0 8px 25px rgba(255, 171, 0, 0.4);
+            position: relative;
+            z-index: 15;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.02); } }
+
+        .container { max-width: 500px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 10; }
+
+        /* 단계별 카드 */
+        .step-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: var(--glass-shadow);
+        }
+        .step-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .step-num { background: var(--gradient-pink); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; box-shadow: var(--glow-pink); }
+        .step-title { font-size: 1.1rem; font-weight: 700; }
+
+        /* 성별 선택 */
+        .gender-selector { display: flex; gap: 10px; }
+        .gender-btn { flex: 1; padding: 16px 8px; background: rgba(255,255,255,0.05); border: 2px solid rgba(255,255,255,0.1); border-radius: 16px; cursor: pointer; transition: 0.3s; color: var(--text-secondary); font-family: 'Sarabun'; }
+        .gender-btn.active { background: linear-gradient(135deg, rgba(255,107,157,0.2) 0%, rgba(168,85,247,0.2) 100%); border-color: var(--pink-primary); color: var(--text-primary); box-shadow: var(--glow-pink); }
+        .gender-icon { font-size: 1.8rem; display: block; margin-bottom: 8px; }
+        .gender-text { font-size: 0.85rem; font-weight: 600; }
+
+        /* 12띠 그리드 */
+        .zodiac-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+        .zodiac-item { background: rgba(255,255,255,0.05); border: 2px solid transparent; border-radius: 16px; padding: 14px 6px; text-align: center; cursor: pointer; transition: 0.3s; }
+        .zodiac-item.selected { background: linear-gradient(135deg, rgba(255,107,157,0.25) 0%, rgba(168,85,247,0.25) 100%); border-color: var(--pink-primary); box-shadow: var(--glow-pink); animation: selectedPulse 1.5s infinite; }
+        @keyframes selectedPulse { 0%, 100% { box-shadow: 0 0 15px rgba(255,107,157,0.4); } 50% { box-shadow: 0 0 25px rgba(255,107,157,0.6); } }
+        .zodiac-icon { font-size: 1.8rem; display: block; margin-bottom: 6px; }
+        .zodiac-name { font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); }
+        .zodiac-item.selected .zodiac-name { color: var(--text-primary); }
+
+        /* 하단 액션바 */
+        .action-area { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(15,15,35,0.95); backdrop-filter: blur(20px); padding: 16px 20px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; gap: 12px; justify-content: center; z-index: 100; }
+        .btn-lotto { flex: 0.8; background: var(--gradient-gold); color: #1a1a2e; display: flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 0.9rem; padding: 14px 16px; transition: 0.3s; }
+        .btn-submit { flex: 2; background: rgba(255,255,255,0.1); color: var(--text-muted); border: 2px solid rgba(255,255,255,0.1); padding: 14px 20px; border-radius: 50px; font-size: 1.1rem; font-weight: 700; cursor: not-allowed; transition: 0.3s; font-family: 'Sarabun'; }
+        .btn-submit.active { background: var(--gradient-pink); color: white; border-color: transparent; cursor: pointer; box-shadow: var(--glow-pink); animation: btnGlow 2s infinite; }
+        @keyframes btnGlow { 0%, 100% { box-shadow: 0 0 20px rgba(255,107,157,0.5); } 50% { box-shadow: 0 0 35px rgba(255,107,157,0.7); } }
+
+        /* [NEW] SNS 공유 섹션 스타일 */
+        .share-section-home { text-align: center; margin: 30px 0 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .share-title { color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-bottom: 15px; }
+        .share-buttons { display: flex; gap: 12px; justify-content: center; }
+        .share-btn { width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.1); cursor: pointer; transition: all 0.3s ease; font-size: 1.2rem; }
+        .share-btn:hover { transform: translateY(-3px) scale(1.05); }
+        .share-facebook:hover { background: #1877F2; border-color: #1877F2; box-shadow: 0 0 15px rgba(24,119,242,0.5); }
+        .share-line:hover { background: #06C755; border-color: #06C755; box-shadow: 0 0 15px rgba(6,199,85,0.5); }
+        .share-twitter:hover { background: #000; border-color: #333; box-shadow: 0 0 15px rgba(255,255,255,0.3); }
+        .share-copy:hover { background: #a855f7; border-color: #a855f7; box-shadow: 0 0 15px rgba(168,85,247,0.5); }
+        .copy-toast { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%) translateY(20px); background: rgba(16,185,129,0.9); color: white; padding: 10px 20px; border-radius: 20px; font-weight: bold; opacity: 0; visibility: hidden; transition: all 0.3s; z-index: 1000; backdrop-filter: blur(5px); }
+        .copy-toast.show { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+
+        /* 푸터 스타일 */
+        .main-footer { text-align: center; padding: 20px; color: var(--text-muted); font-size: 0.8rem; }
+        .main-footer a { color: var(--pink-primary); text-decoration: none; }
+
+        /* 반응형 */
+        @media (min-width: 768px) { .container { max-width: 550px; } .zodiac-item { padding: 18px 8px; } .zodiac-icon { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+
+<!-- 별/하트 배경 -->
+<div class="stars" id="stars"></div>
+<div class="floating-hearts" id="hearts"></div>
+
+<!-- 📦 레이아웃 래퍼 -->
+<div class="layout-wrapper" style="display: flex; justify-content: center; gap: 20px; max-width: 1200px; margin: 0 auto; padding: 20px;">
+
+    <!-- [왼쪽] 사이드 레일 광고 -->
+    <aside class="side-rail" style="width: 160px; height: 600px; position: sticky; top: 20px; display: none;">
+        <div style="font-size: 0.7em; color: #aaa; text-align: center; margin-bottom: 5px;">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3198582468837090" data-ad-slot="5807274060" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </aside>
+
+    <!-- [중앙] 메인 콘텐츠 -->
+    <div class="main-content" style="flex: 1; max-width: 600px; width: 100%;">
+        
+        <header>
+            <h1>💕 ดูดวงสมพงศ์</h1>
+            <p class="subtitle">ดวงความรัก 12 นักษัตร</p>
+        </header>
+
+        <a href="https://lottery.spattra.com" class="lotto-banner">
+            🎰 ตรวจหวยงวดล่าสุด 30 ล้าน!
+        </a>
+
+        <div class="container" style="padding: 0;"> 
+            
+            <!-- Step 1: 커플 유형 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <span class="step-num">1</span>
+                    <span class="step-title">เลือกประเภทคู่รัก</span>
+                </div>
+                <div class="gender-selector">
+                    <button class="gender-btn active" onclick="selectGender('mf')" aria-label="ชาย-หญิง">
+                        <span class="gender-icon">👫</span><span class="gender-text">ชาย-หญิง</span>
+                    </button>
+                    <button class="gender-btn" onclick="selectGender('mm')" aria-label="ชาย-ชาย">
+                        <span class="gender-icon">👬</span><span class="gender-text">ชาย-ชาย</span>
+                    </button>
+                    <button class="gender-btn" onclick="selectGender('ff')" aria-label="หญิง-หญิง">
+                        <span class="gender-icon">👭</span><span class="gender-text">หญิง-หญิง</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ✅ [중간 광고] -->
+            <div class="ad-middle" style="margin: 20px 0; text-align: center; background: rgba(255,255,255,0.05); border-radius: 15px; padding: 10px;">
+                 <div style="font-size: 0.7em; color: #aaa; margin-bottom: 5px;">Sponsored</div>
+                 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3198582468837090" data-ad-slot="5807274060" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
+            <!-- Step 2: 내 띠 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <span class="step-num">2</span>
+                    <span class="step-title">ฉันเกิดปี</span>
+                    <button onclick="openModal()" style="margin-left:auto; background:none; border:none; color:#ff6b9d; font-size:0.9rem; font-weight:bold; cursor:pointer;">
+                        ❓ ไม่รู้ราศี?
+                    </button>
+                </div>
+                <div class="zodiac-grid" id="my-grid"></div>
+            </div>
+
+            <!-- Step 3: 상대방 띠 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <span class="step-num">3</span>
+                    <span class="step-title">เขา/เธอ เกิดปี</span>
+                </div>
+                <div class="zodiac-grid" id="partner-grid"></div>
+            </div>
+
+        </div>
+
+        <!-- ✅ [NEW] SNS 공유 섹션 (푸터 바로 위) -->
+        <div class="share-section-home">
+            <p class="share-title">แชร์ให้เพื่อน (공유하기)</p>
+            <div class="share-buttons">
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/sharer/sharer.php?u=" onclick="this.href+=encodeURIComponent(window.location.href);return true;" target="_blank" class="share-btn share-facebook"><i class="fab fa-facebook-f"></i></a>
+                <!-- LINE -->
+                <a href="https://social-plugins.line.me/lineit/share?url=" onclick="this.href+=encodeURIComponent(window.location.href);return true;" target="_blank" class="share-btn share-line"><i class="fab fa-line"></i></a>
+                <!-- Twitter -->
+                <a href="https://twitter.com/intent/tweet?url=" onclick="this.href+=encodeURIComponent(window.location.href)+'&text='+encodeURIComponent(document.title);return true;" target="_blank" class="share-btn share-twitter"><i class="fab fa-x-twitter"></i></a>
+                <!-- Copy -->
+                <button onclick="copyLink()" class="share-btn share-copy"><i class="fas fa-link"></i></button>
+            </div>
+            <div id="copy-toast" class="copy-toast">✅ คัดลอกแล้ว!</div>
+        </div>
+
+        <footer class="main-footer">
+            <p>© 2026 Zodiac Love Match</p>
+            <p style="margin-top: 5px;">ดูดวงความรักแม่นๆ 12 นักษัตร</p>
+        </footer>
+
+        <div class="action-area">
+            <a href="https://lottery.spattra.com" class="btn-lotto">🎱 ตรวจหวย</a>
+            <button id="btn-match" class="btn-submit" onclick="goToResult()">
+                เลือกให้ครบก่อนนะ 💫
+            </button>
+        </div>
+
+    </div> 
+    <!-- 중앙 끝 -->
+
+    <!-- [오른쪽] 사이드 레일 광고 -->
+    <aside class="side-rail" style="width: 160px; height: 600px; position: sticky; top: 20px; display: none;">
+        <div style="font-size: 0.7em; color: #aaa; text-align: center; margin-bottom: 5px;">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3198582468837090" data-ad-slot="5807274060" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </aside>
+
+</div> 
+<!-- 레이아웃 끝 -->
+
+<!-- Zodiac Finder Modal -->
+<div id="zodiacModal" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.85); z-index:200; justify-content:center; align-items:center; backdrop-filter:blur(5px);">
+    <div style="background: linear-gradient(145deg, #1a1a3e, #2d1b4e); padding:30px; border-radius:24px; width:90%; max-width:350px; text-align:center; border:1px solid rgba(255,255,255,0.15); box-shadow:0 0 40px rgba(168,85,247,0.4);">
+        <h3 style="margin-bottom:8px; color:white; font-size:1.3rem;">📅 เช็คปีนักษัตร</h3>
+        <p style="color:#aaa; font-size:0.85rem; margin-bottom:20px;">ใส่วันเกิดของคุณเพื่อความแม่นยำ</p>
+        <div style="display:flex; gap:10px; margin-bottom:15px;">
+            <select id="bYear" style="flex:1; padding:12px; border-radius:12px; border:none; background:#0f0f23; color:white; font-size:1rem;"><option value="">ปี (Year)</option></select>
+        </div>
+        <div style="display:flex; gap:10px; margin-bottom:25px;">
+            <select id="bMonth" style="flex:1; padding:12px; border-radius:12px; border:none; background:#0f0f23; color:white; font-size:1rem;"><option value="">เดือน</option><option value="1">ม.ค.</option><option value="2">ก.พ.</option><option value="3">มี.ค.</option><option value="4">เม.ย.</option><option value="5">พ.ค.</option><option value="6">มิ.ย.</option><option value="7">ก.ค.</option><option value="8">ส.ค.</option><option value="9">ก.ย.</option><option value="10">ต.ค.</option><option value="11">พ.ย.</option><option value="12">ธ.ค.</option></select>
+            <select id="bDay" style="flex:1; padding:12px; border-radius:12px; border:none; background:#0f0f23; color:white; font-size:1rem;"><option value="">วัน</option></select>
+        </div>
+        <button onclick="calculateZodiac()" style="width:100%; padding:14px; border-radius:50px; border:none; background:linear-gradient(135deg, #ff6b9d, #a855f7); color:white; font-weight:800; font-size:1.1rem; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);">🔍 ค้นหา</button>
+        <button onclick="closeModal()" style="margin-top:15px; background:none; border:none; color:#777; font-size:0.9rem; text-decoration:underline;">ปิด</button>
+        <div id="searchResult" style="margin-top:20px; min-height:30px; font-weight:bold; color:#fdcb6e;"></div>
+    </div>
+</div>
+
+<script>
+    // 12띠 데이터
+    const zodiacs = [
+        { id: 'rat', name: 'ชวด', icon: '🐭' }, { id: 'ox', name: 'ฉลู', icon: '🐮' }, { id: 'tiger', name: 'ขาล', icon: '🐯' }, { id: 'rabbit', name: 'เถาะ', icon: '🐰' },
+        { id: 'dragon', name: 'มะโรง', icon: '🐲' }, { id: 'snake', name: 'มะเส็ง', icon: '🐍' }, { id: 'horse', name: 'มะเมีย', icon: '🐴' }, { id: 'goat', name: 'มะแม', icon: '🐐' },
+        { id: 'monkey', name: 'วอก', icon: '🐵' }, { id: 'rooster', name: 'ระกา', icon: '🐔' }, { id: 'dog', name: 'จอ', icon: '🐶' }, { id: 'pig', name: 'กุน', icon: '🐷' }
+    ];
+    let myZodiac = null, partnerZodiac = null, selectedGender = 'mf';
+
+    // 배경 효과
+    function createStars() { const c=document.getElementById('stars'); for(let i=0;i<80;i++){ let s=document.createElement('div');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*3+'s';s.style.animationDuration=(2+Math.random()*2)+'s';c.appendChild(s);}}
+    function createHearts() { const c=document.getElementById('hearts'); const h=['💕','💗','💖','💝','❤️','🩷']; for(let i=0;i<15;i++){ let e=document.createElement('div');e.className='heart';e.textContent=h[Math.floor(Math.random()*h.length)];e.style.left=Math.random()*100+'%';e.style.animationDelay=Math.random()*12+'s';e.style.animationDuration=(10+Math.random()*5)+'s';e.style.fontSize=(0.8+Math.random()*0.8)+'rem';c.appendChild(e);}}
+
+    // 그리드 생성
+    function createGrid(cid, isP) {
+        const c = document.getElementById(cid);
+        zodiacs.forEach(z => {
+            const d = document.createElement('div'); d.className = 'zodiac-item';
+            d.innerHTML = `<span class="zodiac-icon">${z.icon}</span><span class="zodiac-name">${z.name}</span>`;
+            d.onclick = () => { c.querySelectorAll('.zodiac-item').forEach(i=>i.classList.remove('selected')); d.classList.add('selected'); if(isP) partnerZodiac=z.id; else myZodiac=z.id; checkButton(); };
+            c.appendChild(d);
+        });
+    }
+
+    // 선택 로직
+    function selectGender(t) { selectedGender=t; document.querySelectorAll('.gender-btn').forEach(b=>b.classList.remove('active')); event.currentTarget.classList.add('active'); checkButton(); }
+    function checkButton() {
+        const b = document.getElementById('btn-match');
+        if(myZodiac && partnerZodiac) {
+            b.classList.add('active');
+            let r = selectedGender==='mf'?'❤️':(selectedGender==='mm'?'💙':'💜');
+            b.innerHTML = `ดูดวง: ${myZodiac} ${r} ${partnerZodiac}`;
+        } else { b.classList.remove('active'); b.innerHTML = 'เลือกให้ครบก่อนนะ 💫'; }
+    }
+    function goToResult() { if(myZodiac && partnerZodiac) window.location.href = `posts/${myZodiac}-${partnerZodiac}-${selectedGender}.html`; }
+
+    // 링크 복사
+    function copyLink() {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            const t = document.getElementById('copy-toast');
+            t.classList.add('show');
+            setTimeout(() => t.classList.remove('show'), 2000);
+        });
+    }
+
+    // 모달 로직
+    function openModal(){document.getElementById('zodiacModal').style.display='flex'}
+    function closeModal(){document.getElementById('zodiacModal').style.display='none';document.getElementById('searchResult').innerHTML=''}
+    const lunarNewYears = {1950:217,1951:206,1952:127,1953:214,1954:203,1955:124,1956:212,1957:131,1958:218,1959:208,1960:128,1961:215,1962:205,1963:125,1964:213,1965:202,1966:121,1967:209,1968:130,1969:217,1970:206,1971:127,1972:215,1973:203,1974:123,1975:211,1976:131,1977:218,1978:207,1979:128,1980:216,1981:205,1982:125,1983:213,1984:202,1985:220,1986:209,1987:129,1988:217,1989:206,1990:127,1991:215,1992:204,1993:123,1994:210,1995:131,1996:219,1997:207,1998:128,1999:216,2000:205,2001:124,2002:212,2003:201,2004:122,2005:209,2006:129,2007:218,2008:207,2009:126,2010:214,2011:203,2012:123,2013:210,2014:131,2015:219,2016:208,2017:128,2018:216,2019:205,2020:125,2021:212,2022:201,2023:122,2024:210,2025:129,2026:217,2027:206,2028:126,2029:213,2030:203};
+    const zodiacNamesTh = ['ชวด', 'ฉลู', 'ขาล', 'เถาะ', 'มะโรง', 'มะเส็ง', 'มะเมีย', 'มะแม', 'วอก', 'ระกา', 'จอ', 'กุน'];
+    
+    function initDateSelect() {
+        const ys=document.getElementById('bYear'), ds=document.getElementById('bDay');
+        for(let y=2025;y>=1950;y--) ys.add(new Option(y,y));
+        for(let d=1;d<=31;d++) ds.add(new Option(d,d));
+    }
+    function calculateZodiac() {
+        const y=parseInt(document.getElementById('bYear').value), m=parseInt(document.getElementById('bMonth').value), d=parseInt(document.getElementById('bDay').value);
+        if(!y||!m||!d){document.getElementById('searchResult').innerText="⚠️ กรุณาใส่วันเกิดให้ครบ";return}
+        const idate=m*100+d, ldate=lunarNewYears[y];
+        let zYear=y; if(idate<ldate) zYear=y-1;
+        let idx=(zYear-1900)%12; if(idx<0) idx+=12;
+        const zName=zodiacNamesTh[idx], zIcon=zodiacs[idx].icon;
+        document.getElementById('searchResult').innerHTML=`<span style="font-size:2rem;display:block;margin-bottom:5px;">${zIcon}</span>คุณเกิดปี <strong>${zName}</strong>`;
+        setTimeout(()=>{closeModal();document.querySelectorAll('#my-grid .zodiac-item')[idx].click();document.getElementById('my-grid').scrollIntoView({behavior:'smooth',block:'center'});},2000);
+    }
+
+    window.onload = function() { initDateSelect(); createStars(); createHearts(); createGrid('my-grid', false); createGrid('partner-grid', true); };
+</script>
+
+</body>
+</html>
