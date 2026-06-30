@@ -177,6 +177,16 @@ def get_full_html(me, partner, gender, score_data, ai_content):
         <div class="grade-badge">เกรด {grade}</div>
         <p style="font-size:1.1rem; margin-bottom: 10px;">✨ {comment}</p>
     </div>
+    <!-- zodiac -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-3198582468837090"
+         data-ad-slot="5960972916"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
     <div class="glass-card" style="text-align: left;">
         <h3 style="color:var(--pink-primary); margin-bottom:15px;"><i class="fas fa-star"></i> บทวิเคราะห์ดวงความรัก </h3>
         {ai_content}
