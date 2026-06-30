@@ -164,14 +164,11 @@ def get_full_html(me, partner, gender, score_data, ai_content):
         .btn {{ flex: 1; padding: 15px; border-radius: 50px; text-decoration: none; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px; }}
         .btn-back {{ background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2); }}
         .btn-lotto {{ background: var(--gradient-gold); color: #1a1a2e; }}
-        .ad-box {{ background: rgba(255,255,255,0.02); border: 1px dashed rgba(255,255,255,0.1); border-radius: 12px; margin: 20px 0; padding: 10px; text-align: center; min-height: 100px; }}
-        .ad-label {{ font-size: 0.7em; color: #666; display: block; margin-bottom: 5px; }}
         footer {{ text-align: center; margin-top: 40px; color: #666; font-size: 0.8rem; }}
     </style>
 </head>
 <body>
 <div class="container">
-    <div class="ad-box"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3198582468837090" data-ad-slot="5807274060" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({{}});</script></div>
     <div class="glass-card score-section">
         <div class="zodiac-pair">{me['icon']} {gender['icon']} {partner['icon']}</div>
         <h1>{me['name']} & {partner['name']}</h1>
@@ -180,7 +177,6 @@ def get_full_html(me, partner, gender, score_data, ai_content):
         <div class="grade-badge">เกรด {grade}</div>
         <p style="font-size:1.1rem; margin-bottom: 10px;">✨ {comment}</p>
     </div>
-    <div class="ad-box"><span class="ad-label">Sponsored</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3198582468837090" data-ad-slot="5807274060" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({{}});</script></div>
     <div class="glass-card" style="text-align: left;">
         <h3 style="color:var(--pink-primary); margin-bottom:15px;"><i class="fas fa-star"></i> บทวิเคราะห์ดวงความรัก </h3>
         {ai_content}
@@ -189,7 +185,6 @@ def get_full_html(me, partner, gender, score_data, ai_content):
         <a href="/" class="btn btn-back"><i class="fas fa-arrow-left"></i> เลือกคู่ใหม่</a>
         <a href="https://lottery.spattra.com" class="btn btn-lotto"><i class="fas fa-ticket-alt"></i> ตรวจหวย</a>
     </div>
-    <div class="ad-box"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3198582468837090" data-ad-slot="5807274060" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({{}});</script></div>
     <footer><p>© 2024 Zodiac Love Match</p></footer>
 </div>
 </body>
